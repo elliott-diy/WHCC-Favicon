@@ -1,0 +1,57 @@
+/* static/styles.css */
+body {
+    background-color: #080808;
+    color: #c7c7c7;
+    font-family: 'JetBrains Mono', monospace;
+    text-align: center;
+    padding: 50px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    margin-bottom: 40px;
+}
+
+.logo-container img {
+    max-width: 200px;
+}
+
+.challenge-info {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 51, 85, 0.5);
+    margin-bottom: 20px;
+}
+
+a {
+    color: #ff3355;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+.hint {
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: #c7c7c7;
+}

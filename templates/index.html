@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Hat Cyber Crew - Favicon Challenge</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="/static/WHCC_logo.png" alt="White Hat Cyber Crew Logo">
+        </div>
+
+        <p>Can you trace the origin server's IP using just a <span style="color: #ff3355;">hash</span>?</p>
+
+        <div class="challenge-info">
+            <p><em>You've already got what you need.</em> Or do you? 😏</p>
+        </div>
+
+        <div class="hint">
+            <p><strong>Hint:</strong> Sometimes, the answers are hidden in plain sight. Look for the smallest details. Iconography can reveal a lot. <span style="color: #ff3355;">Make sure you don't find a Cloudflare IP, as that’s not the origin server.</span></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>White Hat Cyber Crew | BCIT | Challenge Hosted and Created by <a href="https://elliott.diy" target="_blank">Elliott</a></p>
+    </footer>
+
+    <script>
+        console.log("Hint: The favicon is the key to the challenge. Look for the smallest details.");
+    </script>
+    <!-- This is to prevent you from searching based on the html hash. Sorry! -->
+    <span style="opacity: 0">{{ current_time }}</span>
+</body>
+</html>
