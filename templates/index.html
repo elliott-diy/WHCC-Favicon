@@ -3,10 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>White Hat Cyber Crew - Favicon Challenge</title>
+    <title>White Hat Cyber Crew - Challenges</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            background-color: #080808;
+            color: #c7c7c7;
+            font-family: 'JetBrains Mono', monospace;
+            padding: 50px;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            margin-bottom: 40px;
+        }
+
+        .logo-container img {
+            max-width: 200px;
+        }
+
+        .accordion {
+            background-color: #1a1a1a;
+            color: #c7c7c7;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .accordion:hover {
+            background-color: #ff3355;
+            color: #ffffff;
+        }
+
+        .accordion.active {
+            background-color: #ff3355;
+            color: #ffffff;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding-left: 20px;
+        }
+
+        .accordion.active .accordion-content {
+            max-height: 300px;
+            padding-top: 10px;
+        }
+
+        .accordion-content p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .accordion-content a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff6f61;
+            color: #ffffff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .accordion-content a:hover {
+            background-color: #ffffff;
+            color: #ff6f61;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #c7c7c7;
+        }
+
+        .rules-section {
+            background-color: #1a1a1a;
+            color: #c7c7c7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .rules-section h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .rules-section a {
+            color: #ff3355;
+            text-decoration: none;
+        }
+
+        .rules-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -14,25 +127,44 @@
             <img src="/static/WHCC_logo.png" alt="White Hat Cyber Crew Logo">
         </div>
 
-        <p>Can you trace the origin server's IP using just a <span style="color: #ff3355;">hash</span>?</p>
+        <h1>Cybersecurity Challenges</h1>
+        <p>Welcome to the <strong>White Hat Cyber Crew</strong> challenge page! Test your skills with a variety of cybersecurity challenges. Click on a challenge to expand its details.</p>
 
-        <div class="challenge-info">
-            <p><em>You've already got what you need.</em> Or do you? 😏</p>
+        <div class="accordion" onclick="toggleAccordion(this)">
+            <h2>Favicon Challenge</h2>
+            <div class="accordion-content">
+                <p>Can you trace the origin server's IP using just a <strong>hash</strong>?</p>
+                <a href="/favicon">Take on the Favicon Challenge</a>
+            </div>
         </div>
 
-        <div class="hint">
-            <p><strong>Hint:</strong> Sometimes, the answers are hidden in plain sight. Look for the smallest details. Iconography can reveal a lot. <span style="color: #ff3355;">Make sure you don't find a Cloudflare IP, as that’s not the origin server.</span></p>
+        <div class="rules-section">
+            <h2>Rules and Contact</h2>
+            <p>Make sure to follow our rules while participating in the challenges:</p>
+            <ul>
+                <li><a href="/rules">Challenge Rules</a></li>
+                <li>If you encounter any bugs or issues, please <a href="https://discord.gg/TAbtDhEQ2Z">contact us</a>.</li>
+            </ul>
         </div>
+
     </div>
 
     <footer>
-        <p>White Hat Cyber Crew | BCIT | Challenge Hosted and Created by <a href="https://elliott.diy" target="_blank">Elliott</a></p>
+        <p>White Hat Cyber Crew | BCIT | Challenges Hosted and Created by <a href="" target="_blank">Elliott</a></p>
     </footer>
 
     <script>
-        console.log("Hint: The favicon is the key to the challenge. Look for the smallest details.");
+        function toggleAccordion(accordion) {
+            accordion.classList.toggle('active');
+
+            const accordions = document.querySelectorAll('.accordion');
+            accordions.forEach(acc => {
+                if (acc !== accordion && acc.classList.contains('active')) {
+                    acc.classList.remove('active');
+                }
+            });
+        }
     </script>
-    <!-- This is to prevent you from searching based on the html hash. Sorry! -->
-    <span style="opacity: 0">{{ current_time }}</span>
+    <!-- You're kinda a nerd if you're reading this. -->
 </body>
 </html>
